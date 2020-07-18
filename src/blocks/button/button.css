@@ -1,0 +1,46 @@
+.button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  width: 150px;
+  height: 50px;
+  font-size: 30px;
+  display: block;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline-color: greenyellow;
+}
+
+
+.error-message {
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+}
+
+
+/*
+.success-message {
+  color: #23b324;
+  padding: 10px;
+  transition: .3s;
+  opacity: 0;
+}
+
+.success-message__visible {
+  opacity: 1;
+}
+
+
+.input-container__invalid .error-message {
+  font-size: 12px;
+  line-height: 15px;
+  color: #FF0000;
+}
+
+.input-container__invalid .input__text {
+  border-color: #FF3333;
+} 
+*/
