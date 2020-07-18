@@ -19,6 +19,15 @@ import "./pages/index.css";
   const title = document.querySelector('#title');
   const linkImage = document.querySelector('#linkImage');
   const popupIsOpened = 'popup_is-opened';
+  const apiUrl = NODE_ENV === 'production' ? 'https://praktikum.tk/cohort11' : 'http://praktikum.tk/cohort11';
+  
+  const apiData = {
+  url: apiUrl,
+  headrs: {
+    authorization: '47bb72d3-cbf1-498a-9fe2-5d7f7327faa0',
+    'Content-Type': 'application/json'
+  }
+  }
 
   const callbackImg = (url) => popupImge.openImg(url);
   const createCard = (data) =>  new Card(data, callbackImg).render();
@@ -32,7 +41,7 @@ import "./pages/index.css";
   const popupEdit = new Popup(document.querySelector('.popup-edit'), popupIsOpened);
   const popupImge = new Popup(document.querySelector('.popup-image'), popupIsOpened);
   const userInfo = new UserInfo(userInfoName, userInfoJob, userName, userAboutMe, userInfoPhoto, callbackGetInfo);
-  const api = new Api(infoTokenId);
+  const api = new Api(apiData);
 
   cardList.render();
   userInfo.setUserInfo();

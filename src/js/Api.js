@@ -1,7 +1,7 @@
 export class Api {
-  constructor(infoTokenId) {
-    this.token = infoTokenId.token;
-    this.urlId = infoTokenId.urlId;
+  constructor(apiData) {
+    this.token = apiData.headrs.authorization;
+    this.urlId = apiData.url;
   }
 
   _getResponseData(res) {
