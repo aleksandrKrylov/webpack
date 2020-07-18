@@ -1,4 +1,4 @@
-class Popup{
+export class Popup{
   constructor(popup, classOpen){
     this.popup = popup;
     this.classOpen = classOpen;
@@ -10,6 +10,11 @@ class Popup{
     this.popup.classList.add(this.classOpen);  
   };
   
+  openImg (url) {
+    this.popupZoom.setAttribute('src', url);
+    this.open()
+  }
+
   close = () => {
      this.popup.classList.remove(this.classOpen);
   };

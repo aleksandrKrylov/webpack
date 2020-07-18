@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: { main: './src/index.js' },
@@ -46,6 +47,14 @@ module.exports = {
       },
       plugins: [
         new MiniCssExtractPlugin({filename: 'style.[contenthash].css'}),
+        new OptimizeCssAssetsPlugin({
+          assetNameRegExp: /\.css$/g,
+          cssProcessor: require('cssnano'),
+          cssProcessorPluginOptions: {
+                  preset: ['default'],
+          },
+          canPrint: true
+  }),
         new HtmlWebpackPlugin({
           inject: false, 
           template: './src/index.html', 

@@ -1,11 +1,12 @@
-
-const numbers = [2, 3, 5];
-const doubledNumbers = numbers.map(number => number * 2); // Стрелочная функция. Не запнётся ли на ней Internet Explorer
-
-console.log(doubledNumbers); // 4, 6, 10
+import {Api} from './js/Api.js';
+import {Card} from './js/Card.js';
+import {CardList} from './js/CardList.js';
+import {FormValidator} from './js/FormValidator.js';
+import {Popup} from './js/Popup.js';
+import {UserInfo} from './js/UserInfo.js';
 import "./pages/index.css";
 
-/*(function() {
+(function() {
   const infoTokenId =  { token: '47bb72d3-cbf1-498a-9fe2-5d7f7327faa0', urlId: 'https://praktikum.tk/cohort11' };
   const userInfoPhoto = document.querySelector('.user-info__photo')
   const placesList = document.querySelector('.places-list');
@@ -19,7 +20,7 @@ import "./pages/index.css";
   const linkImage = document.querySelector('#linkImage');
   const popupIsOpened = 'popup_is-opened';
 
-  const callbackImg = (url) => popupImge.open(url);
+  const callbackImg = (url) => popupImge.openImg(url);
   const createCard = (data) =>  new Card(data, callbackImg).render();
   const callbackGetInfo = () => api.getInfoAboutUser();
   const callbackInitialCards = () => api.getInitialCards();
@@ -29,7 +30,7 @@ import "./pages/index.css";
   const formEditValidator = new FormValidator(formEdit);
   const popupCard = new Popup(document.querySelector('.popup-card'), popupIsOpened);
   const popupEdit = new Popup(document.querySelector('.popup-edit'), popupIsOpened);
-  const popupImge = new PopupImge(document.querySelector('.popup-image'), popupIsOpened);
+  const popupImge = new Popup(document.querySelector('.popup-image'), popupIsOpened);
   const userInfo = new UserInfo(userInfoName, userInfoJob, userName, userAboutMe, userInfoPhoto, callbackGetInfo);
   const api = new Api(infoTokenId);
 
@@ -72,4 +73,4 @@ import "./pages/index.css";
       console.log( `Ошибка: ${err}`);
     });  
   });
-})(); */
+})(); 
