@@ -51,7 +51,11 @@ module.exports = {
         use: [
           "file-loader?name=./images/[name].[ext]&esModule=false",
           {
-            loader: "image-webpack-loader"
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true,
+              disable: true,
+            },
           },
         ],
       },
