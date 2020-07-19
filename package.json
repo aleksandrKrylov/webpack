@@ -1,8 +1,8 @@
 {
   "name": "proekt11",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "project using Webpack",
+  "main": "src/index.js",
   "scripts": {
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aleksandrKrylov/webpack.git"
+    "url": "git+https://aleksandrKrylov.github.io/webpack/"
   },
-  "author": "",
+  "author": "Alexander Krylov <a.v.krylovv@yandex.ru>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aleksandrKrylov/webpack/issues"
