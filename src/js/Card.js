@@ -1,4 +1,4 @@
-class Card {
+export class Card {
   constructor(data, callbackImg) {
     this.data = data;
     this.callbackImg = callbackImg;
