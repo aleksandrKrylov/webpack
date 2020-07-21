@@ -1,5 +1,5 @@
 # webpack
-Версия 0.0.5
+Версия 1.0.0
 
 ## Стэк технологий:
 ES6, Babel, OOP, CSS3, HTML5, Webpack, BEM
