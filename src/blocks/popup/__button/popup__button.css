@@ -7,7 +7,12 @@
   font-size: 36px;
 }
 
+.popup__button_text-size {
+  font-size: 18px;
+}
+
 .popup__button_valid {
   color:rgba(255, 255, 255, 1);;
   background: #000000;
 }
+

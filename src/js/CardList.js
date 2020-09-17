@@ -21,7 +21,7 @@ export class CardList {
         });
       })
       .catch((err) => {
-        console.log(`Ошибка: ${err}`);
+        alert(`Ошибка: ${err.message}`);
       });
   }
 }

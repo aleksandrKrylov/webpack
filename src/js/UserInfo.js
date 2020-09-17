@@ -22,7 +22,7 @@ export class UserInfo {
       objUser._id = "47bb72d3-cbf1-498a-9fe2-5d7f7327faa0";
     })
     .catch((err) => {
-      console.log( `Ошибка: ${err}`);
+      alert( `Ошибка: ${err.message}`);
     });
   } 
  

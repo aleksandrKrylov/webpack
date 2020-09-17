@@ -49,4 +49,68 @@ export class Api {
       return this._getResponseData(res);
     });
   }
+
+  addNewCard(textinputName, textInputLink) {
+    return fetch(`${this.urlId}/cards`, {
+      method: "POST",
+      headers: {
+        authorization: this.token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: textinputName,
+        link: textInputLink,
+      }),
+    })
+    .then((res) => {
+      return this._getResponseData(res);
+    })
+  }
+
+  deleteCard(cardId) {
+    return fetch(`${this.urlId}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: {
+        authorization: this.token,
+        "Content-Type": "application/json",
+      }
+    })
+    .then((res) => {
+      return this._getResponseData(res);
+    })
+  }
+  
+  toggleLike(methods, cardId) {     
+    return fetch(`${this.urlId}/cards/like/${cardId}`, {
+      method: methods,
+      headers: {
+        authorization: this.token,
+        "Content-Type": "application/json",
+      }
+    })
+    .then((res) => {
+      return this._getResponseData(res);
+    })
+  }
+
+  updatingUsersAvatar(avatarLink) {
+    return fetch(`${this.urlId}/users/me/avatar`, {
+      method: "PATCH",
+      headers: {
+        authorization: this.token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        avatar: avatarLink
+      })
+    })
+    .then((res) => {
+      return this._getResponseData(res);
+    })
+  }
+  
+  showAlert(err) {
+    alert(`Упс... ${err}`);
+  }
+
 }
