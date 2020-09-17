@@ -15,7 +15,7 @@
 ES6, Babel, OOP, CSS3, HTML5, Webpack, BEM
 
 ## Пакеты которые используются в сборках:
-# Для работы с кодом:
+### Для работы с кодом:
 - babel-loader,
 - babel-cli,
 - babel-core,
@@ -29,14 +29,14 @@ ES6, Babel, OOP, CSS3, HTML5, Webpack, BEM
 - postcss-loader,
 - autoprefixer,
 - cssnano.
-# Для работы вебпака:
+### Для работы вебпака:
 - gh-pages,
 - webpack-md5-hash,
 - webpack,
 - webpack-cli,
 - webpack-dev-server,
 - path.
-# Для работы с изображениями:
+### Для работы с изображениями:
 - file-loader,
 - image-webpack-loader.
 
