@@ -7,14 +7,15 @@ const isDev = process.env.NODE_ENV === "development";
 const webpack = require("webpack");
 
 module.exports = {
-  entry: { main: "./src/index.js" },
+  entry: {
+    main: "./src/index.js"
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[chunkhash].js",
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -47,10 +48,9 @@ module.exports = {
         use: "file-loader?name=./fonts/[name].[ext]",
       },
       {
-        // "file-loader?name=./images/[name].[ext]&esModule=false",
         test: /\.(jpg|jpeg|png|svg|webp)$/,
         use: [
-          'file-loader?name=./images/[name].[ext]',
+          'file-loader?name=./images/[name].[ext]&esModule=false',
           {
             loader: 'image-webpack-loader',
             options: {
@@ -58,7 +58,6 @@ module.exports = {
                 progressive: true,
                 quality: 65
               },
-              // optipng.enabled: false will disable optipng
               optipng: {
                 enabled: false,
               },
@@ -69,7 +68,6 @@ module.exports = {
               gifsicle: {
                 interlaced: false,
               },
-              // the webp option will enable WEBP
               webp: {
                 quality: 75
               }
@@ -80,7 +78,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "style.[contenthash].css" }),
+    new MiniCssExtractPlugin({
+      filename: "style.[contenthash].css"
+    }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require("cssnano"),
